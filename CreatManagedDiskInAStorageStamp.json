@@ -260,7 +260,7 @@
                     "vmSize": "[parameters('virtualMachineSize')]"
                 },
                 "additionalCapabilities": {
-                    "ultraSSDEnabled": "[if(equals(parameters('accountType'),'UltraSSD_LRS'), true, false)]"
+                    "ultraSSDEnabled": "[if(equals(parameters('accountType'),'UltraSSD_LRS'), 'true', 'false')]"
                 },
                 "osProfile": {
                     "computername": "[parameters('virtualMachineName')]",
