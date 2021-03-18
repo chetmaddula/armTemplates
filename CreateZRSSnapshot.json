@@ -39,7 +39,8 @@
             "allowedValues": [
                 "Standard_LRS",
                 "Standard_ZRS",
-                "Premium_LRS"
+                "Premium_LRS",
+                "StandardSSD_LRS"
             ],
             "type": "string",
             "metadata": {
@@ -63,7 +64,7 @@
                 "creationData": {
                     "createOption": "Empty"
                 },
-                "diskSizeGB": "[parameters('dataDiskSizeInGB')]"
+                "diskSizeGB": "[parameters('diskSizeInGB')]"
             }
         },
         {
@@ -72,12 +73,12 @@
             "apiVersion": "2020-12-01",
             "location": "[parameters('location')]",
             "sku": {
-                "name": "snapshotAccountType"
+                "name": "[parameters('snapshotAccountType')]"
             },
             "properties": {
                 "creationData": {
                       "createOption": "Copy",
-                      "sourceResourceId": "[resourceId('Microsoft.Compute/disks/', [parameters('diskName')])]"
+                      "sourceResourceId": "[resourceId('Microsoft.Compute/disks',parameters('diskName'))]"
                 }
             }
         }
