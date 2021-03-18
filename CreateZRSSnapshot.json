@@ -27,8 +27,7 @@
             "allowedValues": [
                 "Standard_LRS",
                 "StandardSSD_LRS",
-                "Premium_LRS",
-                "UltraSSD_LRS"
+                "Premium_LRS"
             ],
             "type": "string",
             "metadata": {
@@ -39,10 +38,8 @@
             "defaultValue": "Standard_ZRS",
             "allowedValues": [
                 "Standard_LRS",
-                "Standard_ZRS"
-                "StandardSSD_LRS",
-                "Premium_LRS",
-                "UltraSSD_LRS"
+                "Standard_ZRS",
+                "Premium_LRS"
             ],
             "type": "string",
             "metadata": {
@@ -81,7 +78,7 @@
                 "creationData": {
                       "createOption": "Copy",
                       "sourceResourceId": "[resourceId('Microsoft.Compute/disks/', [parameters('diskName')])]"
-                },
+                }
             }
         }
     ]
