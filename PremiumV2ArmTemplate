@@ -28,6 +28,20 @@
                 "description": "Data Disk size in GiB."
             }
         },
+        "diskIOPS": {
+            "defaultValue": 3000,
+            "type": "Int",
+            "metadata": {
+                "description": "Supported number of operations per second."
+            }
+        },
+        "diskBandwidthInMB": {
+            "defaultValue": 125,
+            "type": "Int",
+            "metadata": {
+                "description": "Supported total bandwidth in MB."
+            }
+        },
         "accountType": {
             "defaultValue": "PremiumV2_LRS",
             "allowedValues": [
@@ -57,8 +71,9 @@
                     "createOption": "Empty",
                     "StorageStampName": "[parameters('stampName')]"
                 },
-                "diskSizeGB": "[parameters('dataDiskSizeInGB')]",
-                "dataAccessAuthMode": "AzureActiveDirectory"
+                "diskSizeGB": "[parameters('diskSizeInGB')]",
+                "diskIOPSReadWrite": "[parameters('diskIOPS')]",
+                "diskMBpsReadWrite": "[parameters('diskBandwidthInMB')]"
             }
         }
     ]
