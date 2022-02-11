@@ -15,7 +15,7 @@
             }
         },
         "location": {
-            "defaultValue": "eastus",
+            "defaultValue": "eastus2euap",
             "type": "String",
             "metadata": {
                 "description": "Location for all resources."
