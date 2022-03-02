@@ -63,6 +63,9 @@
             "apiVersion": "2021-12-01",
             "name": "[parameters('diskName')]",
             "location": "[parameters('location')]",
+            "zones":[
+                "1"
+            ],
             "sku": {
                 "name": "[parameters('accountType')]"
             },
