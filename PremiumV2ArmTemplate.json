@@ -21,6 +21,13 @@
                 "description": "Location for all resources."
             }
         },
+        "zone": {
+            "type": "string",
+            "defaultValue": "2",
+            "metadata": {
+              "description": "Availabilityzone of the Disk"
+            }
+        },
         "diskSizeInGB": {
             "defaultValue": 4,
             "type": "Int",

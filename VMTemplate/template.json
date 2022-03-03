@@ -42,6 +42,19 @@
             "metadata": {
               "description": "Location for all resources."
             }
+        },
+        "zone": {
+            "type": "string",
+            "defaultValue": "2",
+            "metadata": {
+              "description": "Availabilityzone of the VM"
+            }
+        },
+        "datadiskArmId": {
+            "type": "string",
+            "metadata": {
+              "description": "armId of PremiumV2 datadisk"
+            }
         }
     },
     "variables": {
@@ -153,7 +166,7 @@
                 "type": "SystemAssigned"
             },
             "zones": [
-                "1"
+                "[parameters('zone')]"
             ],
             "dependsOn": [
                 "[concat('Microsoft.Network/networkInterfaces/', variables('nicName'))]"
@@ -185,7 +198,7 @@
                             "lun": 0,
                             "createOption": "Attach",
                             "managedDisk":{
-                                "id": "/subscriptions/0f55bb56-6089-4c7e-9306-41fb78fc5844/resourceGroups/PremiumV2CanaryRG/providers/Microsoft.Compute/disks/PremiumV2ZonalDataDisk"
+                                "id": "[parameters('datadiskArmId')]"
                             }
                         }
                     ]
