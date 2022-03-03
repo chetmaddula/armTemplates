@@ -71,7 +71,7 @@
             "name": "[parameters('diskName')]",
             "location": "[parameters('location')]",
             "zones":[
-                "1"
+                "[parameters('zone')]"
             ],
             "sku": {
                 "name": "[parameters('accountType')]"
