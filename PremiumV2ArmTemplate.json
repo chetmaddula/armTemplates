@@ -21,6 +21,13 @@
                 "description": "Location for all resources."
             }
         },
+        "zone": {
+            "type": "string",
+            "defaultValue": "2",
+            "metadata": {
+              "description": "Availabilityzone of the Disk"
+            }
+        },
         "diskSizeInGB": {
             "defaultValue": 4,
             "type": "Int",
@@ -63,6 +70,9 @@
             "apiVersion": "2021-12-01",
             "name": "[parameters('diskName')]",
             "location": "[parameters('location')]",
+            "zones":[
+                "[parameters('zone')]"
+            ],
             "sku": {
                 "name": "[parameters('accountType')]"
             },
